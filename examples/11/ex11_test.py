@@ -1,7 +1,7 @@
 from ex11 import identity
 from hypothesis import given, strategies as st
 
-# identity must only includes ones and zeroes
+# identity matrix must includes only ones and zeroes
 @given(st.integers(min_value=1,max_value=100))
 def test_identity_1(i) :
     if i==1:
