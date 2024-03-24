@@ -28,15 +28,15 @@ def levenshteinDistance(str1, str2):
 
 # Post-Task Activity
 # ------------------
-# Please review the test cases you saved where the program behaves
+# Please review the inputs you found, if any, where the program behaves 
 # contrary to its specification.
 #        
-# 1. List the generalized input values where the program behaves contrary
+# 1. List the generalized inputs where the program behaves contrary
 #    to its specification. If you found multiple inputs:
 #     - Make as many entries as you need
-#     - Feel free to use ranges if that's easier(e.g., when a>=0)
-#     - If you found no inputs, indicate "none".
-#     - You do not need to explain further.
+#     - Feel free to use ranges if that's easier (e.g., a>=0)
+#    If you found no inputs (the program is correct), indicate "none."
+#    You do not need to explain any further.
 # 
 #   Input(s): 
 # 

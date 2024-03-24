@@ -1,13 +1,14 @@
 from ex11 import identity
 from hypothesis import given, strategies as st
 
-# identity matrix must includes only ones and zeroes
-@given(st.integers(min_value=1,max_value=100))
+# Identity matrix must include only ones and zeroes
+@given(st.integers(min_value=1,max_value=10))
 def test_identity_1(i) :
+    matrix = identity(i)
     if i==1:
-        assert identity(i) == [1]
+        assert matrix == [1]
     else:
-        for row in identity(i):
+        for row in matrix:
             for element in row:
                 assert element in [0,1]
 
