@@ -10,6 +10,8 @@ There are no syntax errors in these programs. You don’t need to test inputs no
 
 Before you use the testing tool, we will show a brief tutorial.  Please do the tutorial, even if you are familiar with the tool.  We will tell you which testing tool to use for each program. Use only that testing tool for that program. Do not try to repair or edit the program. 
 
+During the study, we want you to say out loud what you are thinking and doing as you go about your work. If you stop talking, we will remind you to resume by saying something like “please continue speaking.”
+
 For each program, we will stop you after thirty minutes, but we won’t warn you if you are about to run out of time. It’s ok to run out of time. 
 
 In the root of the repository is a Python cheat sheet in case you need help with Python syntax. You are not allowed to use the internet or take breaks during this study. Please take a moment to put your phone in do not disturb mode. 
