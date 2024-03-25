@@ -13,6 +13,22 @@ Hypothesis is a useful tool for quickly unit testing Python programs.
 
 We will walk through each step in the tutorial below.
 
+## The function we are testing
+
+The source code for `gcd` (Greatest common divisor) may be found in `tutorial.py` within the same `tutorials` folder. We will be testing this function throughout this tutorial. It looks like this:
+
+```Python
+# Find the greatest common divisor (GCD) of two integers. Greatest common 
+# divisor is also known as greatest common factor (gcf) and greatest 
+# common measure. 
+#
+# @param u finite integer
+# @param v finite integer
+# @returns greatest common divisor of u, v
+def gcd(u:int, v:int):
+    return gcd(v, u % v) if v else abs(u)
+```
+
 ## How to Read a Hypothesis test
 
 Please examine the Hypothesis test file below:
@@ -27,15 +43,15 @@ Please examine the Hypothesis test file below:
 7      assert gcd(u,v) == gcd(v,u)
 ```
 
-Can you find the key parts of the Hypothesis test?
+These are the key parts of the Hypothesis test:
 
 * `Line 1`: Import the function to test (`gcd` from the `tutorial` package)
 * `Line 2`: Import Hypothesis (here we are importing Hypothesis' `given` and `strategies`)
 * `Line 5`: Use Hypothesis to generate two inputs:
-   1. An integer in the range of [-100,100]
-   2. Another integer in the range of [100,100]
+   1. `st.integers(min_value=0,max_value=100)` generates an integer in the range of [0,100]
+   2. Another integer in the range of [0, 100]
 * `Line 6`: Define our test function, which Hypothesis will call with the inputs it generated above.
-* `Line 7`: Assert that ordering `gcd`'s parameters should not result in different outputs. If this assertion is not true, then Hypothesis will fail the test. Note that we are calling `gcd` twice here. 
+* `Line 7`: Assert that `gcd` is symmetric relative to its inputs. That is to say, the order of inputs to `gcd` should not result in different outputs. If this assertion is not true, then Hypothesis will fail the test. Note that we are calling `gcd` twice here. 
 
 > **Note**: It's important to note that in the above Hypothesis test, we never refer to specific inputs our outputs. This is because Hypothesis will execute the same test function over and over with a large number of inputs that Hypothesis pseudo-randomly generates. This means the `assert` should also be general and apply across all the inputs you specify that Hypothesis should generate.
 
@@ -48,15 +64,6 @@ The test function calls the function under test (here, `gcd`) and checks the `as
 When Hypothesis encounters a failed test, Hypothesis displays the inputs that caused the failured in the terminal and stops testing. It's important to note that Hypothesis will stop after it finds the first failure. Hypothesis calls this failing input the **falsification example**, meaning the example proves that the `assert`ion in the test is false in at least this one instance (and possibly in others).
 
 Hypothesis can check many different complex inputs and check many different properties of a function. Hypothesis is quite powerful, and by using Hypothesis you can often avoid the tedium of writing a lot of unit tests.
-
-## The function we are testing
-
-The source code for `gcd` may be found in `tutorial.py` within the same `tutorials` folder. It looks like this:
-
-```Python
-def gcd(u:int, v:int):
-    return gcd(v, u % v) if v else abs(u)
-```
 
 ## Exercise 1
 

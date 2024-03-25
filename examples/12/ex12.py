@@ -1,16 +1,25 @@
 # Adapted from: https://rosettacode.org/wiki/Levenshtein_distance#Python
 #
 # The Levenshtein distance is a metric for measuring the amount of difference
-# between two sequences (i.e. an edit distance). The Levenshtein distance
+# between two strings (i.e. an edit distance). The Levenshtein distance
 # between two strings (`a` and `b`) is defined as the minimum number of edits
 # needed to transform one string into the other, with the allowable edit
 # operations being insertion, deletion, or substitution -- all of a single 
 # character.
 #
+# Examples (key: S=substitute, D=delete, I=insert, _=no change)
+#
+# 1. 'sitting' -> 'kitty' = 4 (3 substitutions + 1 deletion)
+#     S___SSD 
+# 2. 'aaaa'    -> ''      = 4 (4 deletions)
+#     DDDD
+# 3. 'aaaa'    -> 'aaacb' = 2 (1 substitution + 1 add)
+#     ___SA
+#
 # @param str1 the original string
 # @param str2 the final string after editing `str1`
 # @returns the number of edits needed to transform `str1` to `str2`
-def levenshteinDistance(str1, str2):
+def levenshtein(str1, str2):
     m = len(str1)
     n = len(str2)
     d = [[i] for i in range(1, m + 1)]   # d matrix rows

@@ -5,12 +5,9 @@ from hypothesis import given, strategies as st
 @given(st.integers(min_value=1,max_value=10))
 def test_identity_1(i) :
     matrix = identity(i)
-    if i==1:
-        assert matrix == [1]
-    else:
-        for row in matrix:
-            for element in row:
-                assert element in [0,1]
+    for row in matrix:
+        for element in row:
+            assert element in [0,1]
 
 # Replace 'pass' with your own test here. Create as many
 # tests as you need, but remember to rename them.
