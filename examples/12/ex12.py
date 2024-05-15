@@ -9,8 +9,8 @@
 #
 # Examples (key: S=substitute, D=delete, I=insert, _=no change)
 #
-# 1. 'sitting' -> 'kitty' = 4 (3 substitutions + 1 deletion)
-#     S___SSD 
+# 1. 'sitting' -> 'kitty' = 4 (2 substitutions + 2 deletion)
+#     S___SDD 
 # 2. 'aaaa'    -> ''      = 4 (4 deletions)
 #     DDDD
 # 3. 'aaaa'    -> 'aaacb' = 2 (1 substitution + 1 add)
